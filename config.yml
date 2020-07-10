@@ -1,0 +1,51 @@
+swipe:
+  3:
+    left:
+      workspace: 'next' # Switch to next workspace
+      keypress:
+        LEFTCTRL:
+          window: 'next' # Move window to next workspace
+    right:
+      workspace: 'prev' # Switch to previous workspace
+      keypress:
+        LEFTCTRL:
+          window: 'prev' # Move window to previous workspace
+    up:
+      command: "xdotool key super"
+    down:
+      command: "xdotool key super"
+  4:
+    left:
+      command: "xdotool key alt+Right"
+    right:
+      command: "xdotool key alt+Left"
+    up:
+      command: 'xdotool key --clearmodifiers XF86AudioRaiseVolume'
+      keypress:
+        LEFTCTRL:
+          command: 'xdotool key --clearmodifiers XF86MonBrightnessUp' # Brightness up
+    down:
+      command: 'xdotool key --clearmodifiers XF86AudioLowerVolume'
+      keypress:
+        LEFTCTRL:
+          command: 'xdotool key --clearmodifiers XF86MonBrightnessDown' # Brightness down
+rotate:
+  4:
+    clockwise:
+      command: 'xdotool key --clearmodifiers XF86AudioRaiseVolume'
+      keypress:
+        LEFTCTRL:
+          command: 'xdotool key --clearmodifiers XF86MonBrightnessUp' # Brightness up
+    counterclockwise:
+      command: 'xdotool key --clearmodifiers XF86AudioLowerVolume'
+      keypress:
+        LEFTCTRL:
+          command: 'xdotool key --clearmodifiers XF86MonBrightnessDown' # Brightness down
+plugin:
+  inputs:
+    libinput_command_input: # options for lib/plugin/inputs/libinput_command_input
+      enable-tap: true # click to tap
+      enable-dwt: true # disable tap while typing
+      show-keycodes: true # https://github.com/iberianpig/fusuma-plugin-keypress#add-show-keycode-option
+threshold:
+  rotate: 0.1
